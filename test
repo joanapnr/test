@@ -1,12 +1,5 @@
-Hi Trevor – thanks again for the clarification on POD machines, that’s really helpful.
+Thanks Stephen — I’ve incorporated this into the analysis.
 
-I’m just trying to reconcile that with what I’m seeing in the data. We’re observing a number of large cash withdrawals (e.g. £50k+) tagged to the “Branch POD” channel, which is why I initially assumed this was a customer-facing withdrawal touchpoint.
+On the high-value withdrawals, I’ve added a split of automated vs manual for both alerts and SARs within 60d, and also included a column indicating whether the customer had a manual alert on the day of the transaction.
 
-Just to sanity check my understanding:
-
-Are POD machines ever used directly by customers for withdrawals, or are they purely internal processing devices?
-If they’re internal, would “Branch POD” in the data effectively represent teller-assisted / branch-processed transactions rather than a specific machine type?
-
-Feels like there may be a mismatch between the channel label and how it’s being used in practice, so keen to make sure we’re interpreting it correctly in the analysis.
-
-Happy to jump on a quick call if easier.
+Would you mind taking a quick look at slide 6 to check if this aligns with what you had in mind? If so, I can extend the same approach across the other slides/analysis.
