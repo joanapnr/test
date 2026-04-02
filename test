@@ -1,5 +1,19 @@
-Thanks Stephen — I’ve incorporated this into the analysis.
+My role
+My role in relation to the Onfido data has mainly focused on data preparation and structuring. The data we receive from Onfido is stored as a long JSON string in the prospects database, so I developed a process to ingest the raw onfido JSON data and transform it into a structured tabular format that can be more easily used for analysis.
+At the moment, I am not directly involved in the projects that might be consuming the tabular dataset produced by my  process, so I may not be the best person to speak in detail about the specific ways the data is currently being used downstream.
+However, I do know that one potential application is to support rule creation in the onboarding decline engine, where signals from the Onfido reports could help identify higher-risk onboarding attempts.
+In addition, since our team focuses on analytical financial crime initiatives, I expect that this dataset will also be used to generate insights, and evaluate whether certain variables provide predictive power for financial crime detection. If some of these signals prove to be meaningful indicators, they could potentially contribute to the design of preventive & detective controls or risk indicators.
+My contribution has mainly been to make the data usable by transforming it into a structured format, rather than being an expert on the Onfido data itself.
 
-On the high-value withdrawals, I’ve added a split of automated vs manual for both alerts and SARs within 60d, and also included a column indicating whether the customer had a manual alert on the day of the transaction.
+The data
+An Onfido check typically produces three main reports:
+•	Document Report : Verifies the authenticity and validity of an identity document (e.g., passport, ID card, driver’s licence). It checks elements such as document format, expiry date, data consistency, and potential signs of tampering or fraud.
+•	Facial Similarity Report: Confirms that the person presenting the identity document is the same person in the selfie or video capture. It performs face comparison and liveness/spoofing checks to detect impersonation or presentation attacks.
+•	Device Intelligence Report: Analyses the device and network environment used during onboarding to identify potential fraud risks. It detects signals such as emulator usage, rooted devices, VPN/proxy usage, and other indicators of suspicious device behaviour.
 
-Would you mind taking a quick look at slide 6 to check if this aligns with what you had in mind? If so, I can extend the same approach across the other slides/analysis.
+Report Properties
+a report typically contains two main components:
+•	Report properties contain data extracted or generated during the verification process. These are attributes related to the applicant or the document itself, such as document type, issuing country, date of birth, or expiry date. They provide structured information extracted from the document or verification process, but do not explain whether individual checks passed or failed. 
+•	Report breakdown provides the detailed results of the individual verification checks performed within a report. Each breakdown represents a specific control (e.g., image integrity, data validation, document authenticity), and shows the outcome of those checks using results such as clear, consider, failed, or unidentified.
+
+
