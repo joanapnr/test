@@ -1,1 +1,13 @@
-Having access to these fields is critical because a complete view of onboarding data always enhances our ability to detect risk. We anticipate that these signals—covering biometric confidence metrics, device intelligence, and network risk indicators—will have strong predictive power for identifying customers engaging in financial crime or acting with malicious intent. With these data points, the FinCrime analytics team can more accurately detect high-risk accounts, improve fraud prevention controls, and generate actionable insights to combat organised fraud.
+Hi,
+I’ve pulled together the initial estimate of the potential uplift from a simple 2-hop network approach using 2024 confirmed bads.
+Methodology:
+•	Started from the 2024 population of confirmed bad BUK personal customers (38.6k).
+•	I identified 1-hop connections using shared attributes (phone / address)
+•	From those 1-hop nodes, I then looked at 3rd party transactions over the 12 months prior to the initial case start date (seed detection date).
+•	From these transactions, I identified other Barclays customers (2-hop layer) and evaluated which were subsequently confirmed as bad after the case date of the seed node (0-hop / first node in the network).
+Key results:
+•	4,365 customers were confirmed as bad at a later date and had 2-degree connections to earlier confirmed bad customers
+•	Median time between initial bad detection and 2-hop customer detection: 146 days.
+•	Total transaction value (1st party transactions were excluded) between initial detection and subsequent 2-hop detection: £313m.
+•	Of this, £12m relates to cash withdrawals, £13m to cash deposits, £155m to credits and £159m to debits.
+ 
